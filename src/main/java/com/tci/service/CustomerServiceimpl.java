@@ -10,7 +10,11 @@ public class CustomerServiceimpl implements CustomerService {
 
     @Override
     public List<Customer> listAll() {
-        System.out.println("Begin");
+
+        //TODO: 2 Variable no usada
+        //List<String> list1 = new ArrayList<String>();
+
+
         Customer c1 = new Customer();
         Customer c2 = new Customer();
         Customer c3 = new Customer();
@@ -20,7 +24,8 @@ public class CustomerServiceimpl implements CustomerService {
         list.add(c2);
         list.add(c3);
 
-        System.out.println("End");
+        System.out.println("demo");
+        System.out.println("Entering test");
 
         return list;
     }
