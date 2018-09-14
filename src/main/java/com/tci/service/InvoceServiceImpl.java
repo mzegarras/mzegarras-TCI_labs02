@@ -20,9 +20,10 @@ public class InvoceServiceImpl implements InvoceService {
     }
 
     //TODO: No working exception
+
     @Override
     public void openFile() {
-       /* try {
+        /*try {
             FileInputStream fis = new FileInputStream("/tmp/bugger");
             fis.close();
         } catch (IOException ioe) {
@@ -36,5 +37,6 @@ public class InvoceServiceImpl implements InvoceService {
 
     public InvoceServiceImpl(String id){
         id = id;
+        this.id = id;
     }*/
 }
