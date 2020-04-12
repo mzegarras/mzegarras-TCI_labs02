@@ -11,6 +11,9 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- script: echo Running on $(operatingSystem)
-  displayName: 'Run a one-line script'
+stages:
+- stage: build
+  jobs:
+  - job: buildJob
+    steps:
+      - bash: echo buildJob
