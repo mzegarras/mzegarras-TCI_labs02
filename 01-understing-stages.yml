@@ -29,7 +29,7 @@ stages:
       - bash: echo deploy $(environment) 
   - stage: qadeploy
     variables:
-      environment: dev  
+      environment: qa  
     dependsOn: build
     jobs:
     - job: qadeploy
