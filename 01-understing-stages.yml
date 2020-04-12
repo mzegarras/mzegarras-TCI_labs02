@@ -16,32 +16,41 @@ stages:
       steps:
       - bash: echo build first job 
       - bash: echo $(PipelineLevelVariable)
-    - job: Second
-      steps:
-      - bash: echo build second job       
-  - stage: devdeploy
-    variables:
-      environment: dev
-    dependsOn: build
-    jobs:
-    - job: devdeploy
-      steps:
-      - bash: echo deploy $(environment) 
-  - stage: qadeploy
-    variables:
-      environment: qa  
-    dependsOn: build
-    jobs:
-    - job: qadeploy
-      steps:
-      - bash: echo deploy echo deploy $(environment)  
-  - stage: prddeploy
-    variables:
-      environment: prd  
-    dependsOn: 
-    - devdeploy
-    - qadeploy
-    jobs:
-    - job: prddeploy
-      steps:
-      - bash: echo deploy $(environment)
+      - bash: echo $(Build.BuildId)
+      - bash: echo $(Build.BuildNumer)
+      - bash: echo $(Build.SourceBranchName)
+      - bash: echo $(Build.SourcesDirectory)
+      - bash: echo $(System.DefaultWorkingDirectory)
+      - bash: ls -R $(System.DefaultWorkingDirectory)
+      - bash: echo $(Build.ArtifactStagingDirectory)
+      
+
+    # - job: Second
+    #   steps:
+    #   - bash: echo build second job       
+  # - stage: devdeploy
+  #   variables:
+  #     environment: dev
+  #   dependsOn: build
+  #   jobs:
+  #   - job: devdeploy
+  #     steps:
+  #     - bash: echo deploy $(environment) 
+  # - stage: qadeploy
+  #   variables:
+  #     environment: qa  
+  #   dependsOn: build
+  #   jobs:
+  #   - job: qadeploy
+  #     steps:
+  #     - bash: echo deploy echo deploy $(environment)  
+  # - stage: prddeploy
+  #   variables:
+  #     environment: prd  
+  #   dependsOn: 
+  #   - devdeploy
+  #   - qadeploy
+  #   jobs:
+  #   - job: prddeploy
+  #     steps:
+  #     - bash: echo deploy $(environment)
